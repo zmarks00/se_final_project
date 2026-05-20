@@ -1,0 +1,49 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+.modal__content {
+  background: white;
+  width: min(430px, calc(100vw - 40px));
+  max-width: 430px;
+  min-height: 380px;
+  max-height: 90vh;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.modal__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}

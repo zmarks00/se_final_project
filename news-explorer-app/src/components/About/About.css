@@ -1,0 +1,52 @@
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about__title {
+  width: 600px;
+  height: 46px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  font-family: "Roboto Slab", sans-serif;
+  margin: 0 0 40px 0;
+  color: #1a1a1a;
+}
+
+.about__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about__avatar {
+  width: 464px;
+  height: 464px;
+  border-radius: 1000px;
+  object-fit: cover;
+  background-color: #949494;
+}
+
+.about__text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about__paragraph {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.about__paragraph:last-child {
+  margin-bottom: 0;
+}
