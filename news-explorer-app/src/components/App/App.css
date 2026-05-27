@@ -91,6 +91,37 @@
   background-color: #2a65cc;
 }
 
+.news-card__bookmark {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-image: url("../../assets/bookmark_normal.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.news-card__bookmark:hover {
+  background-color: #f0f0f0;
+  background-image: url("../../assets/bookmark_hover.svg");
+}
+
+.news-card__bookmark--marked {
+  background-color: #e8f0ff;
+  border-color: #2f71e5;
+  background-image: url("../../assets/bookmark_marked.svg");
+}
+
+.news-card__bookmark--marked:hover {
+  background-color: #d7e5ff;
+}
+
 /* Preloader Animation */
 .preloader {
   width: 50px;

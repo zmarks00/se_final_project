@@ -108,9 +108,11 @@ function App() {
                               {article.source.name}
                             </p>
                           </div>
-                          <button className="news-card__bookmark">
-                            Bookmark
-                          </button>
+                          <button
+                            type="button"
+                            className="news-card__bookmark"
+                            aria-label="Bookmark article"
+                          />
                         </article>
                       ))}
                     </div>

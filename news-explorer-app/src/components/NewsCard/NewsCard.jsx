@@ -21,7 +21,11 @@ function NewsCard() {
         </p>
         <p className="news-card__source">Treehugger</p>
       </div>
-      <button className="news-card__bookmark">Bookmark</button>
+      <button
+        type="button"
+        className="news-card__bookmark"
+        aria-label="Bookmark article"
+      />
     </article>
   );
 }
