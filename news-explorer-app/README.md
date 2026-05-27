@@ -2,6 +2,8 @@
 
 A modern news search application built with React and Vite, powered by the NewsAPI.
 
+Live demo: https://zmarks00.github.io/se_final_project/
+
 ## Features
 
 - 🔍 **Search News Articles**: Search for articles on any topic
