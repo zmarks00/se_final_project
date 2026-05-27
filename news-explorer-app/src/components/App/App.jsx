@@ -5,6 +5,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
 import About from "../About/About";
+import Preloader from "../Preloader/Preloader";
 import "./App.css";
 
 function App() {
@@ -70,7 +71,7 @@ function App() {
               <Main onSearch={handleSearch} />
               {hasSearched && (
                 <section className="search-results">
-                  {isLoading && <div className="preloader"></div>}
+                  {isLoading && <Preloader />}
                   {error && !isLoading && (
                     <p className="search-results__error">{error}</p>
                   )}
