@@ -2,6 +2,7 @@
   "name": "news-explorer-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://zmarks00.github.io/se_final_project",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
