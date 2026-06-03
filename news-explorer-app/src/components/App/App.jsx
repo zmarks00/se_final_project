@@ -5,6 +5,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
 import About from "../About/About";
+import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
 import "./App.css";
 
@@ -78,42 +79,24 @@ function App() {
                   {visibleArticles.length > 0 && !isLoading && (
                     <div className="search-results__articles">
                       {visibleArticles.map((article, index) => (
-                        <article key={index} className="news-card">
-                          <img
-                            src={
-                              article.urlToImage ||
-                              "https://via.placeholder.com/400x200?text=No+Image"
-                            }
-                            alt={article.title}
-                            className="news-card__image"
-                          />
-                          <div className="news-card__content">
-                            <p className="news-card__date">
-                              {new Date(article.publishedAt).toLocaleDateString(
-                                "en-US",
-                                {
-                                  year: "numeric",
-                                  month: "long",
-                                  day: "numeric",
-                                },
-                              )}
-                            </p>
-                            <h3 className="news-card__title">
-                              {article.title}
-                            </h3>
-                            <p className="news-card__text">
-                              {article.description}
-                            </p>
-                            <p className="news-card__source">
-                              {article.source.name}
-                            </p>
-                          </div>
-                          <button
-                            type="button"
-                            className="news-card__bookmark"
-                            aria-label="Bookmark article"
-                          />
-                        </article>
+                        <NewsCard
+                          key={index}
+                          url={article.url}
+                          title={article.title}
+                          image={
+                            article.urlToImage ||
+                            "https://via.placeholder.com/400x200?text=No+Image"
+                          }
+                          date={new Date(
+                            article.publishedAt,
+                          ).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                          text={article.description}
+                          source={article.source.name}
+                        />
                       ))}
                     </div>
                   )}
