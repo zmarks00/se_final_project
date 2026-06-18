@@ -215,5 +215,5 @@ For issues or questions:
 
 ## Project Pitch Video
 
-Check out [this video](https://www.loom.com/share/d7b26fd8608c428fbee06a48b2846ae9), where I describe my
+Check out [this video](https://www.loom.com/share/d42b13e6f4ac411695465f40fd3016b3), where I describe my
 project and some challenges I faced while building it.
