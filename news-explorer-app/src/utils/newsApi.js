@@ -31,6 +31,7 @@ export const fetchArticles = async (query) => {
     apiKey: API_KEY,
     from: fromDate,
     to: toDate,
+    language: "en",
     pageSize: 100,
     sortBy: "publishedAt",
   });

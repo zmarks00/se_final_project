@@ -212,3 +212,8 @@ For issues or questions:
 1. Check the [NewsAPI documentation](https://newsapi.org/docs)
 2. Review the [Vite documentation](https://vitejs.dev/)
 3. Create an issue in the repository
+
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/d7b26fd8608c428fbee06a48b2846ae9), where I describe my
+project and some challenges I faced while building it.
