@@ -1,0 +1,82 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+.modal__content {
+  background: white;
+  width: 430px;
+  max-width: 90%;
+  /* allow the modal to grow/scroll while keeping it inside the viewport */
+  max-height: 90vh;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  /* keep overflow visible so positioned elements (close button) can sit outside */
+  overflow: visible;
+}
+
+.modal__inner {
+  width: 100%;
+  /* account for padding on .modal__content (24px top+bottom = 48px) */
+  max-height: calc(90vh - 48px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  /* ensure long words/URLs wrap instead of overflowing */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.modal__close {
+  position: absolute;
+  top: -44px;
+  right: -53px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+.modal__close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.modal__close img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.modal__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  text-align: left;
+  font-weight: 900;
+  font-size: 24px;
+}

@@ -1,0 +1,52 @@
+.modal__error {
+  color: #d32f2f;
+  font-size: 14px;
+  margin: 10px 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+.modal__success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__success-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+}
+
+.modal__signin-btn {
+  width: 100%;
+  max-width: 358px;
+  height: 64px;
+  background-color: #2f71e5;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal__or-signin-btn {
+  width: 100%;
+  max-width: 358px;
+  height: 64px;
+  background: transparent;
+  border: 1px;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal__signin-text {
+  color: #2f71e5;
+}
