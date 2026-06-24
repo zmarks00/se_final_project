@@ -77,28 +77,31 @@ function App() {
                     <p className="search-results__error">{error}</p>
                   )}
                   {visibleArticles.length > 0 && !isLoading && (
-                    <div className="search-results__articles">
-                      {visibleArticles.map((article, index) => (
-                        <NewsCard
-                          key={index}
-                          url={article.url}
-                          title={article.title}
-                          image={
-                            article.urlToImage ||
-                            "https://via.placeholder.com/400x200?text=No+Image"
-                          }
-                          date={new Date(
-                            article.publishedAt,
-                          ).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
-                          text={article.description}
-                          source={article.source.name}
-                        />
-                      ))}
-                    </div>
+                    <>
+                      <p className="search-results__text">Search results</p>
+                      <div className="search-results__articles">
+                        {visibleArticles.map((article, index) => (
+                          <NewsCard
+                            key={index}
+                            url={article.url}
+                            title={article.title}
+                            image={
+                              article.urlToImage ||
+                              "https://via.placeholder.com/400x200?text=No+Image"
+                            }
+                            date={new Date(
+                              article.publishedAt,
+                            ).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })}
+                            text={article.description}
+                            source={article.source.name}
+                          />
+                        ))}
+                      </div>
+                    </>
                   )}
                   {hasMore && !isLoading && (
                     <div className="search-results__show-more-wrapper">

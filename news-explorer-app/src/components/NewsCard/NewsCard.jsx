@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./NewsCard.css";
 
 function NewsCard({
@@ -8,6 +9,12 @@ function NewsCard({
   image = "https://via.placeholder.com/400x200?text=News+Image",
   url = "https://example.com",
 }) {
+  const [bookmarked, setBookmarked] = useState(false);
+
+  const handleBookmarkClick = () => {
+    setBookmarked((prev) => !prev);
+  };
+
   return (
     <article className="news-card">
       <a
@@ -26,8 +33,9 @@ function NewsCard({
       </a>
       <button
         type="button"
-        className="news-card__bookmark"
-        aria-label="Bookmark article"
+        className={`news-card__bookmark ${bookmarked ? "news-card__bookmark--marked" : ""}`}
+        aria-label={bookmarked ? "Remove bookmark" : "Bookmark article"}
+        onClick={handleBookmarkClick}
       />
     </article>
   );

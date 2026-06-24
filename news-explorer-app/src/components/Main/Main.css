@@ -1,19 +1,33 @@
 .main {
-  padding-top: 80px; /* to account for absolute header */
-  /* min-height: 100vh; */
+  width: 100%;
+  padding-top: 80px;
   max-width: 1440px;
-  /* max-height: 576px; */
   margin: 0 auto;
 }
 
 .main__hero {
+  position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 40px 20px;
-  /* background-color: #1a1a1a; */
+  padding: 160px 20px 80px;
+  background-image: url("../../assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: none;
+  margin-top: -80px;
+  box-sizing: border-box;
+  height: 576px;
 }
 
 .main__title {

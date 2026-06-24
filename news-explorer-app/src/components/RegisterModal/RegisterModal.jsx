@@ -74,7 +74,7 @@ function RegisterModal({
     <ModalWithForm
       isOpen={isOpen}
       onClose={onClose}
-      title={isRegistered ? "Registration successful!" : "Sign Up"}
+      title={isRegistered ? "Registration successful!" : "Sign up"}
     >
       {isRegistered ? (
         <div className="modal__success-state">
@@ -130,7 +130,14 @@ function RegisterModal({
             className="modal__signin-btn"
             disabled={!isFormValid}
           >
-            Sign Up
+            Sign up
+          </button>
+          <button
+            type="button"
+            className="modal__or-signin-btn"
+            onClick={handleSignIn}
+          >
+            or <span className="modal__signin-text">Sign in</span>
           </button>
         </form>
       )}

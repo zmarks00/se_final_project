@@ -10,8 +10,10 @@ function ModalWithForm({ isOpen, onClose, title, children }) {
         <button className="modal__close" onClick={onClose}>
           <img src={modalCloseButton} alt="modal close button" />
         </button>
-        {title && <h2 className="modal__title">{title}</h2>}
-        {children}
+        <div className="modal__inner">
+          {title && <h2 className="modal__title">{title}</h2>}
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ function LoginModal({ isOpen, onClose, onOpenRegister, onLogin }) {
   };
 
   return (
-    <ModalWithForm isOpen={isOpen} onClose={onClose} title="Sign In">
+    <ModalWithForm isOpen={isOpen} onClose={onClose} title="Sign in">
       <form onSubmit={handleSubmit}>
         <label htmlFor="email" className="modal__label">
           Email
@@ -73,7 +73,7 @@ function LoginModal({ isOpen, onClose, onOpenRegister, onLogin }) {
           className="modal__signin-btn"
           disabled={!isFormValid}
         >
-          Sign In
+          Sign in
         </button>
       </form>
       <button

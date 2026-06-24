@@ -22,7 +22,8 @@
 }
 
 .modal__signin-btn {
-  width: 358px;
+  width: 100%;
+  max-width: 358px;
   height: 64px;
   background-color: #2f71e5;
   color: white;
@@ -31,4 +32,21 @@
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   cursor: pointer;
+}
+
+.modal__or-signin-btn {
+  width: 100%;
+  max-width: 358px;
+  height: 64px;
+  background: transparent;
+  border: 1px;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal__signin-text {
+  color: #2f71e5;
 }

@@ -11,10 +11,8 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-image: url("./assets/background.png");
-  background-size: contain;
-  background-position: cover;
-  background-repeat: no-repeat;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 #root {

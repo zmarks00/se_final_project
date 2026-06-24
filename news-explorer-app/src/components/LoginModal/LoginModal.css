@@ -3,8 +3,9 @@
   max-width: 358px;
   padding: 12px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
   font-family: "Inter", sans-serif;
   font-size: 16px;
 }
@@ -19,10 +20,12 @@
   font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #333;
+  border: none;
 }
 
 .modal__signin-btn {
-  width: 358px;
+  width: 100%;
+  max-width: 358px;
   height: 64px;
   background-color: #2f71e5;
   color: white;
@@ -41,7 +44,8 @@
 }
 
 .modal__signup-btn {
-  width: 358px;
+  width: 100%;
+  max-width: 358px;
   height: 64px;
   background: transparent;
   border: 1px;
@@ -54,6 +58,7 @@
 
 .modal__label {
   color: #2f71e5;
+  text-align: left;
 }
 
 .modal__signup-text {
