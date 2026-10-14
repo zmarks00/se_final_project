@@ -1,0 +1,42 @@
+
+.modal__signin-btn {
+  width: 100%;
+  max-width: 358px;
+  height: 64px;
+  background-color: #2f71e5;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.modal__signin-btn:disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: not-allowed;
+}
+
+.modal__signup-btn {
+  width: 100%;
+  max-width: 358px;
+  height: 64px;
+  background: transparent;
+  border: 1px;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal__label {
+  color: #2f71e5;
+  text-align: left;
+}
+
+.modal__signup-text {
+  color: #2f71e5;
+}

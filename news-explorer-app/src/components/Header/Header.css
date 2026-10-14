@@ -1,0 +1,225 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+  padding: 30px 40px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.header--default {
+  color: white;
+}
+
+.header--default .navigation__link,
+.header--default .header__title,
+.header--default .header__user,
+.header--default button {
+  color: white;
+  border-color: white;
+}
+
+.header--dark {
+  color: black;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.header--dark .navigation__link,
+.header--dark .header__title,
+.header--dark .header__user,
+.header--dark button {
+  color: black;
+  border-color: black;
+}
+
+.header__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  color: inherit;
+  font-family: "Roboto Slab", serif;
+}
+
+.header__title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__link {
+  text-decoration: none;
+  font-size: 18px;
+  color: inherit;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.header__link--active::after {
+  content: "";
+  position: absolute;
+  bottom: -27px;
+  left: -5px;
+  width: 120%;
+  height: 3px;
+  background-color: currentColor;
+}
+
+.navigation__link {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  font-family: "Roboto Slab", serif;
+}
+
+.header__user-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 8px;
+  background: transparent;
+  outline: 1px solid #fff;
+
+  border-radius: 50px;
+  cursor: pointer;
+  color: inherit;
+  padding: 12px 12px;
+
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.header__username {
+  font-size: 18px;
+  text-align: center;
+}
+
+.header__logout-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.header__user-button:hover {
+  opacity: 0.8;
+}
+
+.header__signup {
+  background: transparent;
+  border: 1px solid white;
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header__menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+}
+
+.header__menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: currentColor;
+}
+
+.header__mobile-menu {
+  display: none;
+}
+
+.header__button:hover,
+.header__link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 22px 24px;
+  }
+
+  .header__right {
+    display: none;
+  }
+
+  .header__menu-btn {
+    display: block;
+  }
+
+  .header__mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    background-color: rgba(26, 27, 34, 0.98);
+    color: white;
+  }
+
+  .header--dark .header__mobile-menu {
+    background-color: white;
+    color: #1a1b22;
+  }
+
+  .header__mobile-link,
+  .header__mobile-signup,
+  .header__mobile-user {
+    color: inherit;
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .header__mobile-signup {
+    width: 100%;
+    height: 48px;
+    border: 1px solid currentColor;
+    border-radius: 100px;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+  }
+}

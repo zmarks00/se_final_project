@@ -1,0 +1,174 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-x: hidden;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.modal__content {
+  background: white;
+  width: 430px;
+  max-width: 100%;
+  /* allow the modal to grow/scroll while keeping it inside the viewport */
+  max-height: 90vh;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  /* keep overflow visible so positioned elements (close button) can sit outside */
+  overflow: visible;
+}
+
+.modal__inner {
+  width: 100%;
+  /* account for padding on .modal__content (24px top+bottom = 48px) */
+  max-height: calc(90vh - 48px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  /* ensure long words/URLs wrap instead of overflowing */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.modal__close {
+  position: absolute;
+  top: -44px;
+  right: -53px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+.modal__close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.modal__close img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.modal__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  text-align: left;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.modal__input {
+  width: 100%;
+  max-width: 358px;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.modal__input:focus {
+  border-bottom-color: #2f71e5;
+  box-shadow: 0 1px 0 0 #2f71e5;
+}
+
+.modal__label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #2f71e5;
+  text-align: left;
+}
+
+.modal__label:focus-within {
+  color: #2f71e5;
+}
+
+@media (max-width: 600px) {
+  .modal__overlay {
+    top: 80px;
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal__content {
+    width: 100%;
+    height: calc(100vh - 80px);
+    max-height: none;
+    padding: 24px 20px;
+    border-radius: 12px 12px 0 0;
+    justify-content: flex-start;
+    transform: translateY(100%);
+    animation: modal-slide-in 300ms ease-out forwards;
+    will-change: transform;
+  }
+
+  .modal__inner {
+    max-height: none;
+  }
+
+  .modal__close {
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal__close img {
+    filter: invert(1);
+  }
+
+  .modal__title {
+    padding-right: 32px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .modal__input,
+  .modal__signin-btn,
+  .modal__signup-btn,
+  .modal__or-signin-btn {
+    max-width: none;
+  }
+}
+
+@keyframes modal-slide-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
