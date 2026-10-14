@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import githubIcon from "../../assets/github.png";
-import linkedinIcon from "../../assets/linked-in.png";
+import githubIcon from "../../assets/github.svg";
+import linkedinIcon from "../../assets/LinkedIn.svg";
 
 function Footer() {
   return (
@@ -17,15 +17,33 @@ function Footer() {
             <Link to="/" className="footer__link">
               Home
             </Link>
-            <Link to="/saved-news" className="footer__link">
+            {/*  <Link to="/saved-news" className="footer__link">
               TripleTen
-            </Link>
+            </Link> */}
           </nav>
           <div className="footer__social">
-            <a href="#" className="footer__social-link">
+            <a
+              href="https://www.tripleten.com"
+              target="_blank"
+              rel="noreferrer"
+              className="footer__link"
+            >
+              TripleTen
+            </a>
+            <a
+              href="https://www.github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="footer__social-link"
+            >
               <img src={githubIcon} alt="Github" />
             </a>
-            <a href="#" className="footer__social-link">
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="footer__social-link"
+            >
               <img src={linkedinIcon} alt="LinkedIn" />
             </a>
           </div>

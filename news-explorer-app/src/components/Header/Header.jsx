@@ -1,14 +1,16 @@
 import "./Header.css";
 import "../Navigation/Navigation.css";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
-function Header() {
+function Header({ currentUser = null, onUserChange = () => {} }) {
+  const location = useLocation();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [users, setUsers] = useState([
     {
       email: "taken@example.com",
@@ -46,25 +48,45 @@ function Header() {
       return false;
     }
 
-    setCurrentUser(user);
+    onUserChange(user);
     return true;
   };
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  const headerClass =
+    location.pathname === "/saved-news"
+      ? "header header--dark"
+      : "header header--default";
+
   return (
     <>
-      <header className="header header--default">
+      <header className={headerClass}>
         <div className="header__nav">
           <Link to="/" className="header__title-link">
             <h1 className="header__title">NewsExplorer</h1>
           </Link>
           <div className="header__right">
-            <Link to="/" className="navigation__link">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                `navigation__link ${isActive ? "navigation__link_active" : ""}`.trim()
+              }
+            >
               Home
-            </Link>
+            </NavLink>
             {currentUser && (
-              <Link to="/saved-news" className="navigation__link">
-                Saved Articles
-              </Link>
+              <NavLink
+                to="/saved-news"
+                className={({ isActive }) =>
+                  `navigation__link ${isActive ? "navigation__link_active" : ""}`.trim()
+                }
+              >
+                Saved articles
+              </NavLink>
             )}
             {currentUser ? (
               <span className="header__signup">{currentUser.username}</span>
@@ -77,7 +99,46 @@ function Header() {
               </button>
             )}
           </div>
+          <button
+            type="button"
+            className="header__menu-btn"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
+        {isMenuOpen && (
+          <nav className="header__mobile-menu">
+            <NavLink to="/" end className="header__mobile-link">
+              Home
+            </NavLink>
+            {currentUser && (
+              <NavLink to="/saved-news" className="header__mobile-link">
+                Saved articles
+              </NavLink>
+            )}
+            {currentUser ? (
+              <span className="header__mobile-user">
+                {currentUser.username}
+              </span>
+            ) : (
+              <button
+                type="button"
+                className="header__mobile-signup"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsLoginOpen(true);
+                }}
+              >
+                Sign in
+              </button>
+            )}
+          </nav>
+        )}
       </header>
       <LoginModal
         isOpen={isLoginOpen}
@@ -89,13 +150,19 @@ function Header() {
         isOpen={isRegisterOpen}
         onClose={() => setIsRegisterOpen(false)}
         onSignIn={openLoginModal}
-        onRegisterSuccess={(data) => {
-          handleRegisterSuccess(data);
-          openLoginModal();
-        }}
+        onRegisterSuccess={handleRegisterSuccess}
       />
     </>
   );
 }
+
+Header.propTypes = {
+  currentUser: PropTypes.shape({
+    email: PropTypes.string,
+    username: PropTypes.string,
+    password: PropTypes.string,
+  }),
+  onUserChange: PropTypes.func,
+};
 
 export default Header;

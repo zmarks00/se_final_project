@@ -49,3 +49,27 @@
 .about__paragraph:last-child {
   margin-bottom: 0;
 }
+
+@media (max-width: 720px) {
+  .about {
+    padding: 56px 20px;
+  }
+
+  .about__title {
+    width: auto;
+    height: auto;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 28px;
+  }
+
+  .about__content {
+    gap: 28px;
+  }
+
+  .about__avatar {
+    width: min(100%, 320px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+}

@@ -32,6 +32,7 @@
   align-items: center;
   background-color: #f5f6f7;
   padding: 80px;
+  box-sizing: border-box;
 }
 
 .search-results__text {
@@ -93,8 +94,18 @@
 }
 
 @media (max-width: 720px) {
+  .search-results {
+    padding: 48px 16px;
+  }
+
+  .search-results__text {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
   .search-results__articles {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 

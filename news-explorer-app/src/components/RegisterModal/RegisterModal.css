@@ -9,26 +9,28 @@
 .modal__success-state {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 8px;
 }
 
 .modal__success-text {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.4;
   color: #1a1a1a;
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 
-.modal__signin-btn {
-  width: 100%;
-  max-width: 358px;
-  height: 64px;
-  background-color: #2f71e5;
-  color: white;
+.modal__signin-btn-success {
+  background: transparent;
   border: none;
-  border-radius: 100px;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  color: #2f71e5;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   cursor: pointer;

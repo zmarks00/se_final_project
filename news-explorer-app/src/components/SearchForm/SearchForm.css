@@ -56,3 +56,25 @@
   text-align: left;
   font-family: "Roboto", sans-serif;
 }
+
+@media (max-width: 600px) {
+  .search-form {
+    max-width: 100%;
+  }
+
+  .search-form__input,
+  .search-form__button {
+    position: static;
+    width: 100%;
+  }
+
+  .search-form__input {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .search-form__button {
+    height: 56px;
+    margin-top: 12px;
+  }
+}

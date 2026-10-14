@@ -1,5 +1,6 @@
+import PropTypes from "prop-types";
 import "./ModalWithForm.css";
-import modalCloseButton from "../../assets/close-button.png";
+import modalCloseButton from "../../assets/close-button.svg";
 
 function ModalWithForm({ isOpen, onClose, title, children }) {
   if (!isOpen) return null;
@@ -18,5 +19,12 @@ function ModalWithForm({ isOpen, onClose, title, children }) {
     </div>
   );
 }
+
+ModalWithForm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
 
 export default ModalWithForm;

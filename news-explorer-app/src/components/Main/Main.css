@@ -46,3 +46,26 @@
   max-width: 608px;
   font-family: "Roboto", sans-serif;
 }
+
+@media (max-width: 600px) {
+  .main {
+    padding-top: 64px;
+  }
+
+  .main__hero {
+    height: auto;
+    min-height: 560px;
+    padding: 128px 16px 48px;
+  }
+
+  .main__title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .main__description {
+    max-width: 420px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

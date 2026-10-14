@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+const API_KEY = "7e2e563eb1be4be39341189574d0b229";
 
 const newsApiBaseUrl =
   import.meta.env.MODE === "production"

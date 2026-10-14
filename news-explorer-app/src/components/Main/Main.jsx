@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SearchForm from "../SearchForm/SearchForm";
 import "./Main.css";
 
@@ -6,7 +7,7 @@ function Main({ onSearch }) {
     <main className="main">
       <div className="main__hero">
         <h1 className="main__title">
-          What's going on in <br />
+          What&apos;s going on in <br />
           the world?
         </h1>
         <p className="main__description">
@@ -18,5 +19,9 @@ function Main({ onSearch }) {
     </main>
   );
 }
+
+Main.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
 
 export default Main;

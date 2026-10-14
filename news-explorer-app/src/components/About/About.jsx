@@ -9,7 +9,7 @@ function About() {
         <div className="about__text">
           <h2 className="about__title">About the author</h2>
           <p className="about__paragraph">
-            Hello! My name is Zach Marks and I'm a full stack software developer
+            Hello! My name is Zach Marks and I&apos;m a full stack software developer
             with a passion for creating dynamic and user-friendly web
             applications. With the help of the TripleTen bootcamp program, I now
             specialize in both front-end and back-end development.

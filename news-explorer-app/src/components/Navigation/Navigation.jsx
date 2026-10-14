@@ -1,15 +1,26 @@
 import "./Navigation.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navigation() {
   return (
     <nav className="navigation">
-      <Link to="/" className="navigation__link">
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) =>
+          `navigation__link ${isActive ? "navigation__link_active" : ""}`.trim()
+        }
+      >
         Home
-      </Link>
-      <Link to="/saved-news" className="navigation__link">
+      </NavLink>
+      <NavLink
+        to="/saved-news"
+        className={({ isActive }) =>
+          `navigation__link ${isActive ? "navigation__link_active" : ""}`.trim()
+        }
+      >
         Saved Articles
-      </Link>
+      </NavLink>
     </nav>
   );
 }
